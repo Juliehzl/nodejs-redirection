@@ -3,8 +3,8 @@
 const http = require('http');
 
 const server = http.createServer(function(req, res) {
-    const version = process.env.version;
-    //const version = "0.1.0";
+    //const version = process.env.version;
+    const version = "0.1.0";
     let array = req.url.split("/");
     if(array[array.length - 1] == "")
         array.pop();
@@ -24,4 +24,5 @@ const server = http.createServer(function(req, res) {
     return res.end();
 })
 const port = process.env.PORT || 1337;
+
 server.listen(port);
